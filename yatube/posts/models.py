@@ -20,7 +20,8 @@ class Group(models.Model):
     )
 
     class Meta:
-        verbose_name_plural = "Название"
+        verbose_name='Группа'
+        verbose_name_plural = "Группы"
 
     def __str__(self):
         return self.title
@@ -57,5 +58,6 @@ class Post(models.Model):
         return self.text[:TEXT_LIMIT]
 
     class Meta:
-        ordering = ['-pub_date']
+        ordering = ('-pub_date',)
+        verbose_name = "Пост"
         verbose_name_plural = "Посты"
