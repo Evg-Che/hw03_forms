@@ -13,11 +13,14 @@ class Group(models.Model):
         max_length=200,
         unique=True,
         db_index=True,
-        verbose_name='name'
+        verbose_name='Группы'
     )
     description = models.TextField(
         verbose_name='Описание',
     )
+
+    class Meta:
+        verbose_name_plural = "Название"
 
     def __str__(self):
         return self.title
@@ -55,3 +58,4 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-pub_date']
+        verbose_name_plural = "Посты"
